@@ -361,7 +361,7 @@
 
 	
 	
-	<!-- Start Contact -->
+<!-- Start Contact -->
 	<div id="contact" class="contact-box">
 		<div class="container">
 			<div class="row">
@@ -401,7 +401,7 @@
 								<div class="help-block with-errors"></div>
 							</div>
 							<div class="submit-button text-center">
-								<button class="btn btn-common" id="submit" type="submit">Guardar</button>
+								<button class="btn btn-common" id="submit" type="button" onclick="guardarDatos()">Guardar</button>
 								<div id="msgSubmit" class="h3 text-center hidden"></div> 
 								<div class="clearfix"></div> 
 							</div>
@@ -416,76 +416,41 @@
 	<!-- End Contact -->
 
 	<script>
-	// Funciones de sanitización
-	function sanitizeString(str) {
-		return str.replace(/[^\w\s]/gi, '');
-	}
+	function guardarDatos() {
+		var name = document.getElementById('name').value;
+		var email = document.getElementById('email').value;
+		var phone = document.getElementById('phone').value;
+		var message = document.getElementById('message').value;
 
-	function sanitizeEmail(email) {
-		return email.replace(/[^\w@\.-]/gi, '');
-	}
-
-	// Función para manejar la solicitud de guardar datos
-	function guardarDatos(data) {
-		// Validar los datos recibidos
-		if (!data.name || !data.phone || !data.email) {
-			return {
-				success: false,
-				message: 'Nombre, teléfono y correo electrónico son obligatorios'
-			};
-		}
-
-		// Sanitizar los datos
-		const sanitizedData = {
-			name: sanitizeString(data.name),
-			email: sanitizeEmail(data.email),
-			phone: sanitizeString(data.phone),
-			message: sanitizeString(data.message)
+		var data = {
+			name: name,
+			email: email,
+			phone: phone,
+			message: message
 		};
 
-		// Crear una cadena con los datos
-		const content = `Nombre: ${sanitizedData.name}\n` +
-						`Email: ${sanitizedData.email}\n` +
-						`Teléfono: ${sanitizedData.phone}\n` +
-						`Mensaje: ${sanitizedData.message}\n` +
-						`Fecha: ${new Date().toISOString()}\n\n`;
-
-		// Simular el guardado de datos en el almacenamiento local
-		try {
-			const existingData = localStorage.getItem('registros') || '';
-			localStorage.setItem('registros', existingData + content);
-			return {
-				success: true,
-				message: 'Datos guardados correctamente'
-			};
-		} catch (error) {
-			return {
-				success: false,
-				message: 'Error al guardar los datos'
-			};
-		}
-	}
-
-	// Configurar el evento de envío del formulario
-	document.addEventListener('DOMContentLoaded', () => {
-		const form = document.getElementById('contactForm');
-		form.addEventListener('submit', (e) => {
-			e.preventDefault();
-			const formData = {
-				name: form.name.value,
-				email: form.email.value,
-				phone: form.phone.value,
-				message: form.message.value
-			};
-			const result = guardarDatos(formData);
-			alert(result.message);
-			if (result.success) {
-				form.reset();
+		fetch('guardar_datos.php', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data)
+		})
+		.then(response => response.json())
+		.then(result => {
+			if(result.success) {
+				alert('Datos guardados correctamente');
+				document.getElementById('contactForm').reset();
+			} else {
+				alert('Error al guardar los datos');
 			}
+		})
+		.catch((error) => {
+			console.error('Error:', error);
+			alert('Error al guardar los datos');
 		});
-	});
+	}
 	</script>
-
 	<!-- Start Footer -->
 	<footer class="footer-box">
 		<div class="container">
