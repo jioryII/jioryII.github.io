@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            background-color: #f0f0f0; /* Placeholder color */
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            background-color: transparent;
+            border: none;
+        }
+        .modal-body {
+            padding: 0;
+        }
+        .modal-body img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        @media (min-width: 576px) {
+            .gallery {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Start header -->
+    <header class="top-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="index.html#home">Inicio</a></li>
+                        <li><a class="nav-link" href="index.html#about">Nosotros</a></li>
+                        <li><a class="nav-link" href="index.html#invitacion">Invitacion</a></li>
+                        <li><a class="nav-link active" href="galeria.html">Galeria</a></li>
+                        <li><a class="nav-link" href="index.html#padrinos">Padrinos</a></li>
+                        <li><a class="nav-link" href="index.html#events">Eventos</a></li>
+                        <li><a class="nav-link" href="index.html#contact">Registro</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
+
+    <div class="container">
+        <h1 class="text-center my-5">Nuestra Galería de Fotos</h1>
+        <div class="gallery" id="gallery">
+            <!-- Las imágenes se cargarán dinámicamente aquí -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" alt="Imagen ampliada" id="modalImage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALL JS FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const gallery = document.getElementById('gallery');
+            const imageCount = 31; // Número total de imágenes
+            const batchSize = 10; // Número de imágenes a cargar por lote
+            let loadedImages = 0;
+
+            function loadImageBatch() {
+                const fragment = document.createDocumentFragment();
+                const end = Math.min(loadedImages + batchSize, imageCount);
+
+                for (let i = loadedImages + 1; i <= end; i++) {
+                    const div = document.createElement('div');
+                    div.className = 'gallery-item';
+                    const img = document.createElement('img');
+                    img.src = `images/img${i}.jpg`;
+                    img.alt = `Imagen ${i}`;
+                    img.dataset.toggle = 'modal';
+                    img.dataset.target = '#imageModal';
+                    img.dataset.img = `images/img${i}.jpg`;
+                    div.appendChild(img);
+                    fragment.appendChild(div);
+
+                    img.onload = function() {
+                        this.style.opacity = 1;
+                    };
+                }
+
+                gallery.appendChild(fragment);
+                loadedImages = end;
+
+                if (loadedImages < imageCount) {
+                    // Si hay más imágenes para cargar, programamos el siguiente lote
+                    setTimeout(loadImageBatch, 100);
+                }
+            }
+
+            // Iniciar la carga de imágenes
+            loadImageBatch();
+
+            // Delegación de eventos para el modal
+            $('#gallery').on('click', 'img', function() {
+                var imgSrc = $(this).attr('src');
+                $('#modalImage').attr('src', imgSrc);
+            });
+
+            // Implementar lazy loading
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.dataset.src;
+                            image.classList.remove('lazy');
+                            imageObserver.unobserve(image);
+                        }
+                    });
+                });
+
+                document.querySelectorAll('img.lazy').forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

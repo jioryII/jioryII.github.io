@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>Bezaly & Alexis - Nuestra Boda</title>  
+    <meta name="keywords" content="boda, matrimonio, Bezaly, Alexis, celebración, amor">
+    <meta name="description" content="Celebra con nosotros el día más especial de nuestras vidas. Bezaly y Alexis se casan el 6 de Diciembre de 2024.">
+    <meta name="author" content="Bezaly y Alexis">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="css/pogo-slider.min.css">
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .countdown {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 15px;
+            display: inline-flex;
+            justify-content: center;
+        }
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .countdown-number {
+            display: block;
+            font-size: 2rem;
+        }
+        @media (max-width: 768px) {
+            .countdown {
+                font-size: 1rem;
+                padding: 10px;
+            }
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+            .countdown-item {
+                margin: 0 5px;
+            }
+        }
+    </style>
+</head>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+	<!-- LOADER -->
+    <div id="preloader">
+		<div class="preloader pulse">
+			<i class="fa fa-heartbeat" aria-hidden="true"></i>
+		</div>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+	
+	<!-- Start header -->
+	<header class="top-header">
+		<nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+				<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="#home">Inicio</a></li>
+                        <li><a class="nav-link" href="#about">Nosotros</a></li>
+                        <li><a class="nav-link" href="#invitacion">Invitacion</a></li>
+                        <li><a class="nav-link" href="galeria.html">Galeria</a></li>
+						<li><a class="nav-link" href="#padrinos">Padrinos</a></li>
+                        <li><a class="nav-link" href="#events">Eventos</a></li>
+						<li><a class="nav-link" href="#contact">Registro</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start Banner -->
+	<div class="ulockd-home-slider">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="pogoSlider" id="js-main-slider">
+					<div class="pogoSlider-slide" data-transition="zipReveal" data-duration="1500" style="background-image:url(images/slider-01.jpg);">
+						<div class="lbox-caption">
+							<div class="lbox-details">
+								<h1>Bezaly & Alexis</h1>
+								<h2>Nuestra Boda</h3>
+								<p>Fecha: <strong>06 Diciembre 2024</strong></p>
+								<div class="countdown-container">
+									<div class="countdown" id="countdown1"></div>
+								</div>
+								<a href="#contact" class="btn">Confirmar Asistencia</a>
+							</div>
+						</div>
+					</div>
+					<div class="pogoSlider-slide" data-transition="blocksReveal" data-duration="1500" style="background-image:url(images/slider-02.jpg);">
+						<div class="lbox-caption">
+							<div class="lbox-details">
+								<h1>Bezaly & Alexis</h1>
+								<h2>Celebra con Nosotros</h3>
+								<p>Fecha: <strong>06 Diciembre 2024</strong></p>
+								<div class="countdown-container">
+									<div class="countdown" id="countdown2"></div>
+								</div>
+								<a href="#events" class="btn">Ver Detalles</a>
+							</div>
+						</div>
+					</div>
+					<div class="pogoSlider-slide" data-transition="shrinkReveal" data-duration="2000" style="background-image:url(images/slider-03.jpg);">
+						<div class="lbox-caption">
+							<div class="lbox-details">
+								<h1>Bezaly & Alexis</h1>
+								<h2>Uniendo Nuestras Vidas</h3>
+								<p>Fecha: <strong>06 Diciembre 2024</strong></p>
+								<div class="countdown-container">
+									<div class="countdown" id="countdown3"></div>
+								</div>
+								<a href="#gallery" class="btn">Ver Galería</a>
+							</div>
+						</div>
+					</div>
+				</div><!-- .pogoSlider -->
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function updateCountdown(elementId) {
+			const weddingDate = new Date('2024-12-06T00:00:00').getTime();
+			const now = new Date().getTime();
+			const distance = weddingDate - now;
+
+			const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			document.getElementById(elementId).innerHTML = `
+				<div class="countdown-item">
+					<span class="countdown-number">${days}</span>
+					Días
+				</div>
+				<div class="countdown-item">
+					<span class="countdown-number">${hours}</span>
+					Hrs
+				</div>
+				<div class="countdown-item">
+					<span class="countdown-number">${minutes}</span>
+					Min
+				</div>
+				<div class="countdown-item">
+					<span class="countdown-number">${seconds}</span>
+					Seg
+				</div>
+			`;
+		}
+
+		setInterval(() => {
+			updateCountdown('countdown1');
+			updateCountdown('countdown2');
+			updateCountdown('countdown3');
+		}, 1000);
+	</script>
+	<!-- End Banner -->
+	
+	<!-- Start About us -->
+	<div id="about" class="about-box">
+		<div class="about-a1">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="title-box">
+							<h2>Bezaly <span>&</span> Alexis</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div class="row align-items-center about-main-info">
+							<div class="col-lg-8 col-md-6 col-sm-12">
+								<h2> Palabras de <span>Bezaly</span></h2>
+								<p>Mi corazón rebosa de alegría al pensar en este día tan esperado. Cada momento que hemos compartido nos ha traído hasta aquí, y ahora estamos a punto de comenzar la aventura más hermosa de nuestras vidas. El amor que nos une es como un faro que ilumina nuestro camino, y no puedo esperar para caminar junto a ti en este nuevo capítulo. Estoy lista para reír, crecer y soñar contigo, construyendo juntos un futuro lleno de amor, comprensión y felicidad.</p>
+							</div>
+							<div class="col-lg-4 col-md-6 col-sm-12">
+								<div class="about-img">
+									<img class="img-fluid rounded" src="images/about-img-01.jpg" alt="" style="width: 100%; height: 400px; object-fit: cover; border-radius: 10%;" />
+								</div>
+							</div>
+						</div>
+						<div class="row align-items-center about-main-info">
+							<div class="col-lg-4 col-md-6 col-sm-12">
+								<div class="about-img">
+									<img class="img-fluid rounded" src="images/about-img-02.jpg" alt="" style="width: 100%; height: 400px; object-fit: cover; border-radius: 10%;" />
+								</div>
+							</div>
+							<div class="col-lg-8 col-md-6 col-sm-12">
+								<h2> Palabras de <span>Alexis</span></h2>
+								<p>Cada día a tu lado ha sido un regalo, y ahora estamos a punto de embarcarnos en el viaje más emocionante de nuestras vidas. Tu amor me inspira a ser mejor persona, y tu sonrisa ilumina hasta mis días más oscuros. No puedo imaginar un futuro sin ti a mi lado, compartiendo risas, superando desafíos y creando recuerdos inolvidables. Estoy listo para amarte, apoyarte y crecer contigo en cada paso de este hermoso camino que hemos elegido recorrer juntos.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About us -->
+	
+	<!-- Start Invitación -->
+	<div id="invitacion" class="invitacion-box" style="position: relative; overflow: hidden; padding: 40px 0;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Invitación a Nuestro Amor Eterno</h2>
+						<p>Con el corazón rebosante de ilusión y esperanza, les extendemos esta invitación especial.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="invitacion-content text-center" style="background-color: #fff; border: 2px solid #d4af37; border-radius: 15px; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
+						<div style="font-family: 'Brush Script MT', cursive; line-height: 1.6; color: #333; position: relative; z-index: 2;">
+							<h3 style="font-size: 2.5em; margin-bottom: 20px;">Querida familia y amigos entrañables,</h3>
+							<p style="font-size: 1.2em;">Con inmensa alegría y emoción, les invitamos a ser testigos del momento más mágico de nuestras vidas. Después de un viaje lleno de amor, risas y sueños compartidos, hemos decidido sellar nuestro compromiso eterno en matrimonio.</p>
+							<p style="font-size: 1.2em;">Su presencia iluminará este día tan especial con el brillo de mil estrellas. Cada uno de ustedes ha dejado una huella indeleble en nuestros corazones, y compartir este momento trascendental a su lado hará que nuestra felicidad sea completa.</p>
+							<p style="font-size: 1.2em;">Anhelamos crear junto a ustedes recuerdos que perdurarán para siempre, mientras damos el primer paso en este nuevo y emocionante capítulo de nuestras vidas. Su amor y bendiciones serán el regalo más preciado en este día inolvidable.</p>
+							<h4 style="font-size: 1.8em; margin-top: 30px;">Con todo nuestro amor y gratitud,</h4>
+							<h3 style="font-size: 2.5em; margin-top: 10px;">Bezaly & Alexis</h3>
+							<h8 style="font-size: 1.5em; margin-top: 10px;">06/12/2024</h8>
+						</div>
+						<img src="images/fond.png" alt="Decoración" style="position: absolute; bottom: 0; left: 0; width: 200px; height: auto; border-radius: 0 0 0; opacity: 0.2; z-index: 1; pointer-events: none;">
+						<div style="position: absolute; top: 10px; left: 10px; width: 50px; height: 50px; border-radius: 50%; border: 2px solid #d4af37; opacity: 0.5;"></div>
+						<div style="position: absolute; bottom: 10px; right: 10px; width: 50px; height: 50px; border-radius: 50%; border: 2px solid #d4af37; opacity: 0.5;"></div>
+						<div style="position: absolute; top: 50%; left: -25px; width: 50px; height: 2px; background-color: #d4af37; opacity: 0.5;"></div>
+						<div style="position: absolute; top: 50%; right: -25px; width: 50px; height: 2px; background-color: #d4af37; opacity: 0.5;"></div>
+						<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('images/petals.png') repeat; opacity: 0.1; z-index: 1; pointer-events: none;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Invitación -->
+
+<!-- Start Padrinos -->
+<div id="padrinos" class="padrinos-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Nuestros Queridos Padrinos</h2>
+						<p>Con profunda gratitud y cariño, honramos a nuestros padrinos, cuya guía y bendición iluminan nuestro camino en este día tan significativo. Su presencia y apoyo enriquecen inmensamente nuestra celebración de amor.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-5 col-md-6 col-sm-12">
+				<h2><strong>Padrinos Mayores</strong></h2>
+					<div class="padrinos-inner" style="border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+						<img src="images/padrinos1.png" alt="Padrinos Mayores" style="width: 90%; height: auto; border-radius: 15px; margin-bottom: 15px;">
+						
+						<ul style="list-style-type: none; padding-left: 0;">
+							<li><h3 style="font-size: 1.5em; color: #333;">Uzziel Zamalloa Triveño</h3></li>
+							<li><h3 style="font-size: 1.5em; color: #333;">Teresa Cayo Rodas</h3></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-5 col-md-6 col-sm-12">
+				<h2><strong>Padrinos de Arras</strong></h2>
+					<div class="padrinos-inner" style="border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+						<img src="images/padrinos2.png" alt="Padrinos de Arras" style="width: 90%; height: auto; border-radius: 15px; margin-bottom: 15px;">
+						
+						<ul style="list-style-type: none; padding-left: 0;">
+							<li><h3 style="font-size: 1.5em; color: #333;">René Candia Cartagena</h3></li>
+							<li><h3 style="font-size: 1.5em; color: #333;">Nancy Morón Pacsi</h3></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Padrinos -->
+	
+	<!-- Start Events -->
+	<div id="events" class="events-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Eventos</h2>
+						<p>Celebra con nosotros los momentos más importantes de nuestra unión.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="event-inner">
+						<div class="event-img">
+						</div>
+						<h2><strong>06 Diciembre 2024</strong></h2>
+						<h3><em>12:00 PM</em></h3>
+						<h4>Matrimonio Religioso</h4>
+						<p>Nos honraría contar con tu presencia en este momento tan especial donde uniremos nuestras vidas ante Dios. La ceremonia será un hermoso reflejo de nuestro amor y compromiso.</p>
+						<div class="map-container">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d933.129227899229!2d-71.95999950810756!3d-13.532420815632575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd5fa7adaaaab%3A0x7539b6575f64ffa6!2sIglesia%20De%20TTIO!5e0!3m2!1ses-419!2spe!4v1729010795898!5m2!1ses-419!2spe" width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="event-inner">
+						<div class="event-img">
+						</div>
+						<h2><strong>06 Diciembre 2024</strong></h2>
+						<h3><em>4:00 PM</em></h3>
+						<h4>Ceremonia y Matrimonio Civil</h4>
+						<p>Acompáñanos en este momento lleno de alegría donde oficialmente nos convertiremos en marido y mujer ante la ley. Tu presencia hará este día aún más especial.</p>
+						<div class="map-container">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.1180223039605!2d-71.95773172611342!3d-13.528347886840566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd5c6fb72c2d1%3A0x32685195c5ab3860!2sCRYSTAL%20PALACE%20-%20salon%20de%20eventos%20y%20convenciones!5e0!3m2!1ses-419!2spe!4v1729010918096!5m2!1ses-419!2spe" width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Events -->
+
+	
+	
+	<!-- Start Contact -->
+	<div id="contact" class="contact-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Confirma tu Asistencia</h2>
+						<p>Nos encantaría contar con tu presencia en este día tan especial. Por favor, confírmanos tu asistencia para hacer de nuestra celebración un momento inolvidable.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+				  <div class="contact-block">
+					<form id="contactForm">
+					  <div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Su Nombre" required data-error="Por favor, ingresa tu nombre">
+								<div class="help-block with-errors"></div>
+							</div>                                 
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<input type="email" placeholder="Su Correo (opcional)" id="email" class="form-control" name="email">
+								<div class="help-block with-errors"></div>
+							</div> 
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<input type="tel" class="form-control" id="phone" name="phone" placeholder="Número de Teléfono (se le enviara un recordatorio)" required data-error="Por favor, ingresa tu número de teléfono">
+								<div class="help-block with-errors"></div>
+							</div> 
+						</div>
+						<div class="col-md-12">
+							<div class="form-group"> 
+								<textarea class="form-control" id="message" name="message" placeholder="Algunas palabras?" rows="8" data-error="Por favor, escribe tu comentario"></textarea>
+								<div class="help-block with-errors"></div>
+							</div>
+							<div class="submit-button text-center">
+								<button class="btn btn-common" id="submit" type="submit">Guardar</button>
+								<div id="msgSubmit" class="h3 text-center hidden"></div> 
+								<div class="clearfix"></div> 
+							</div>
+						</div>
+					  </div>            
+					</form>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Contact -->
+
+	<script>
+	// Funciones de sanitización
+	function sanitizeString(str) {
+		return str.replace(/[^\w\s]/gi, '');
+	}
+
+	function sanitizeEmail(email) {
+		return email.replace(/[^\w@\.-]/gi, '');
+	}
+
+	// Función para manejar la solicitud de guardar datos
+	function guardarDatos(data) {
+		// Validar los datos recibidos
+		if (!data.name || !data.phone || !data.email) {
+			return {
+				success: false,
+				message: 'Nombre, teléfono y correo electrónico son obligatorios'
+			};
+		}
+
+		// Sanitizar los datos
+		const sanitizedData = {
+			name: sanitizeString(data.name),
+			email: sanitizeEmail(data.email),
+			phone: sanitizeString(data.phone),
+			message: sanitizeString(data.message)
+		};
+
+		// Crear una cadena con los datos
+		const content = `Nombre: ${sanitizedData.name}\n` +
+						`Email: ${sanitizedData.email}\n` +
+						`Teléfono: ${sanitizedData.phone}\n` +
+						`Mensaje: ${sanitizedData.message}\n` +
+						`Fecha: ${new Date().toISOString()}\n\n`;
+
+		// Simular el guardado de datos en el almacenamiento local
+		try {
+			const existingData = localStorage.getItem('registros') || '';
+			localStorage.setItem('registros', existingData + content);
+			return {
+				success: true,
+				message: 'Datos guardados correctamente'
+			};
+		} catch (error) {
+			return {
+				success: false,
+				message: 'Error al guardar los datos'
+			};
+		}
+	}
+
+	// Configurar el evento de envío del formulario
+	document.addEventListener('DOMContentLoaded', () => {
+		const form = document.getElementById('contactForm');
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const formData = {
+				name: form.name.value,
+				email: form.email.value,
+				phone: form.phone.value,
+				message: form.message.value
+			};
+			const result = guardarDatos(formData);
+			alert(result.message);
+			if (result.success) {
+				form.reset();
+			}
+		});
+	});
+	</script>
+
+	<!-- Start Footer -->
+	<footer class="footer-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="footer-company-name">¡Felicidades a los novios! Hecho con cariño :)</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer -->
+
+	<!-- ALL JS FILES -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.pogo-slider.min.js"></script> 
+	<script src="js/slider-index.js"></script>
+	<script src="js/smoothscroll.js"></script>
+	<script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
